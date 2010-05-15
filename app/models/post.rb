@@ -32,6 +32,7 @@ class Post < ActiveRecord::Base
   def editable_by?(user)
     user && (user.id == user_id || (user.admin? && topic.forum.company_id == user.company_id) || user.admin > 2 || user.moderator_of?(topic.forum_id))
   end
+    
 
   def to_xml(options = {})
     options[:except] ||= []
