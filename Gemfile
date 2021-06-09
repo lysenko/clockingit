@@ -18,7 +18,7 @@ gem 'devise-encryptable'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'delayed_job_active_record'
-gem 'cocaine'
+gem 'terrapin'
 gem 'hashie'
 gem 'rufus-scheduler'
 gem 'localeapp', :require => false

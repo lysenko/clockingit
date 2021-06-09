@@ -15,7 +15,6 @@ class ProjectFile < ActiveRecord::Base
   belongs_to :work_log
 
   has_attached_file :file, :whiny => false, :styles => {:thumbnail => '124x124'}, :path => File.join(Setting.store_root, ':company_id', ':uri_:style.:extension')
-  do_not_validate_attachment_file_type :file
 
   after_create { |r|
     l = r.event_logs.new
@@ -113,4 +112,3 @@ end
 #  index_project_files_on_task_id            (task_id)
 #  fk_project_files_user_id                  (user_id)
 #
-
