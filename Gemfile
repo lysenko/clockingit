@@ -42,7 +42,6 @@ end
 platforms :mri do
   gem 'daemons'
 
-  gem 'mysql2',   group: :mysql
   gem 'pg',       group: :postgres
   gem 'sqlite3',  group: :sqlite
 
@@ -86,7 +85,7 @@ end
 
 group :test, :cucumber do
   gem 'rspec-rails'
-  gem 'capybara', '2.7'
+  gem 'capybara'
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'machinist', '1.0.6'
@@ -97,9 +96,4 @@ group :test, :cucumber do
   # https://github.com/thoughtbot/paperclip/issues/1445#issuecomment-44084655
   gem 'test_after_commit'
   gem 'rspec-activemodel-mocks'
-end
-
-group :cucumber do
-  gem 'cucumber-rails'
-  gem 'crb'
 end

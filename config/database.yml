@@ -1,20 +1,12 @@
-# MySQL.  Versions 4.1 and 5.0 are recommended.
-#
-# Install the MySQL driver:
-#   gem install mysql2
-#
-# And be sure to use new-style password hashing:
-#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-#------------------------------------------------------------------------------
 development: &development
-  adapter: <%= RUBY_ENGINE=="jruby" ? "jdbcmysql" : "mysql2" %>
-  encoding: utf8
+  adapter: <%= RUBY_ENGINE=="jruby" ? "jdbcpostgresql" : "postgresql" %>
   database: jobsworth_development
-  pool: 5
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
-  # socket: /tmp/mysql.sock # for OSX
+  username: postgres
+  password: postgres
+  port: 5432
+  host:     localhost
+  schema_search_path: public
+  min_messages: warning
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -30,4 +22,3 @@ production:
 staging:
   <<: *development
   database: jobsworth_staging
-
